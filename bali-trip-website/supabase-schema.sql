@@ -29,6 +29,7 @@ drop policy if exists "Anyone can read trip comments" on trip_comments;
 drop policy if exists "Anyone can add trip comments" on trip_comments;
 drop policy if exists "Anyone can read restaurant votes" on restaurant_votes;
 drop policy if exists "Anyone can add restaurant votes" on restaurant_votes;
+drop policy if exists "Anyone can delete restaurant votes" on restaurant_votes;
 drop policy if exists "Anyone can read checklist state" on checklist_state;
 drop policy if exists "Anyone can add checklist state" on checklist_state;
 drop policy if exists "Anyone can update checklist state" on checklist_state;
@@ -52,6 +53,11 @@ create policy "Anyone can add restaurant votes"
 on restaurant_votes for insert
 to anon
 with check (true);
+
+create policy "Anyone can delete restaurant votes"
+on restaurant_votes for delete
+to anon
+using (true);
 
 create policy "Anyone can read checklist state"
 on checklist_state for select

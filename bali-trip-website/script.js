@@ -46,24 +46,24 @@ const routes = [
 ];
 
 const restaurants = [
-  ["crumb-coaster", "Crumb & Coaster", "꾸따(Kuta)", "브런치(brunch), 도착 다음날 가볍게 시작", "Crumb & Coaster Kuta Bali"],
-  ["naughty-nuris", "Naughty Nuri's", "스미냑(Seminyak)", "폭립(pork ribs), 점심 후보", "Naughty Nuri's Seminyak Bali"],
-  ["braud", "Braud", "스미냑(Seminyak)", "카페(cafe), Naughty Nuri's 근처", "Braud Cafe Seminyak Bali"],
-  ["baked", "Baked", "스미냑/울루와뚜(Seminyak/Uluwatu)", "브런치와 커피, 여러 지점 활용 가능", "Baked Bali Uluwatu"],
-  ["la-brisa", "La Brisa", "짱구(Canggu)", "비치클럽(beach club), 선셋/선데이마켓", "La Brisa Bali"],
-  ["sensorium", "Sensorium", "짱구(Canggu)", "브런치 맛집, 카페 후보", "Sensorium Bali Canggu"],
-  ["warung-sika", "Warung Sika", "스미냑(Seminyak)", "현지식/와룽(warung), 캐주얼 식사", "Warung Sika Seminyak Bali"],
-  ["pennylane", "PennyLane", "짱구(Canggu)", "분위기 좋은 식사/카페", "PennyLane Canggu Bali"],
-  ["akasa", "AKASA", "바투르산(Mount Batur)", "바투르산 뷰 카페", "AKASA Kintamani Bali"],
-  ["pison-ubud", "Pison Ubud", "우붓(Ubud)", "우붓 카페/점심 후보", "Pison Ubud Bali"],
-  ["tukies", "Tukies Coconut Shop", "우붓(Ubud)", "코코넛 아이스크림", "Tukies Coconut Shop Ubud Bali"],
-  ["monsieur-spoon", "Monsieur Spoon", "우붓/스미냑(Ubud/Seminyak)", "베이커리(bakery), 가벼운 식사", "Monsieur Spoon Bali"],
-  ["sisterfields", "Sisterfields", "스미냑(Seminyak)", "브런치(brunch), 카페, 첫 만남에 편한 곳", "Sisterfields Seminyak Bali"],
-  ["motel-mexicola", "Motel Mexicola", "스미냑(Seminyak)", "활기 있는 단체 저녁(group dinner)", "Motel Mexicola Seminyak Bali"],
-  ["mades-warung", "Made's Warung", "스미냑(Seminyak)", "발리 음식(Balinese food), 무난한 선택", "Made's Warung Seminyak Bali"],
-  ["jimbaran", "짐바란 해산물(Jimbaran seafood)", "짐바란(Jimbaran)", "울루와뚜 후 선셋 해산물", "Jimbaran seafood Bali"],
-  ["revolver", "Revolver Espresso", "스미냑(Seminyak)", "커피(coffee)와 아침 식사", "Revolver Espresso Seminyak Bali"],
-  ["boy-n-cow", "Boy'N'Cow", "스미냑(Seminyak)", "스테이크하우스(steakhouse) 저녁", "Boy'N'Cow Seminyak Bali"],
+  { id: "crumb-coaster", day: "Sat 25", meal: "Breakfast", region: "꾸따(Kuta)", name: "Crumb & Coaster", note: "브런치(brunch), 도착 다음날 가볍게 시작", map: "Crumb & Coaster Kuta Bali" },
+  { id: "sisterfields", day: "Sat 25", meal: "Breakfast", region: "스미냑(Seminyak)", name: "Sisterfields", note: "첫 만남에 편한 브런치(brunch) 후보", map: "Sisterfields Seminyak Bali" },
+  { id: "naughty-nuris", day: "Sat 25", meal: "Lunch", region: "스미냑(Seminyak)", name: "Naughty Nuri's", note: "폭립(pork ribs), 쇼핑 전후 점심", map: "Naughty Nuri's Seminyak Bali" },
+  { id: "braud", day: "Sat 25", meal: "Lunch", region: "스미냑(Seminyak)", name: "Braud", note: "카페(cafe), Naughty Nuri's 근처", map: "Braud Cafe Seminyak Bali" },
+  { id: "motel-mexicola", day: "Sat 25", meal: "Dinner", region: "스미냑(Seminyak)", name: "Motel Mexicola", note: "활기 있는 단체 저녁(group dinner)", map: "Motel Mexicola Seminyak Bali" },
+  { id: "mades-warung", day: "Sat 25", meal: "Dinner", region: "스미냑(Seminyak)", name: "Made's Warung", note: "발리 음식(Balinese food), 무난한 선택", map: "Made's Warung Seminyak Bali" },
+  { id: "baked", day: "Sun 26", meal: "Breakfast", region: "스미냑/울루와뚜(Seminyak/Uluwatu)", name: "Baked", note: "울루와뚜 코스면 남부 가는 길 브런치", map: "Baked Bali Uluwatu", routes: ["uluwatu"] },
+  { id: "sensorium", day: "Sun 26", meal: "Breakfast", region: "짱구(Canggu)", name: "Sensorium", note: "짱구/따나롯 코스 브런치", map: "Sensorium Bali Canggu", routes: ["tanah-lot"] },
+  { id: "pison-ubud", day: "Sun 26", meal: "Breakfast", region: "우붓(Ubud)", name: "Pison Ubud", note: "우붓 코스 카페/브런치", map: "Pison Ubud Bali", routes: ["ubud"] },
+  { id: "la-brisa", day: "Sun 26", meal: "Lunch", region: "짱구(Canggu)", name: "La Brisa", note: "짱구 코스면 선데이마켓/비치클럽", map: "La Brisa Bali", routes: ["tanah-lot"] },
+  { id: "pennylane", day: "Sun 26", meal: "Lunch", region: "짱구(Canggu)", name: "PennyLane", note: "짱구 코스 중간 식사/카페", map: "PennyLane Canggu Bali", routes: ["tanah-lot"] },
+  { id: "tukies", day: "Sun 26", meal: "Lunch", region: "우붓(Ubud)", name: "Tukies Coconut Shop", note: "우붓 디저트, 코코넛 아이스크림", map: "Tukies Coconut Shop Ubud Bali", routes: ["ubud"] },
+  { id: "monsieur-spoon", day: "Sun 26", meal: "Lunch", region: "우붓/스미냑(Ubud/Seminyak)", name: "Monsieur Spoon", note: "가벼운 베이커리(bakery), 우붓/스미냑 양쪽 가능", map: "Monsieur Spoon Bali", routes: ["ubud", "tanah-lot"] },
+  { id: "jimbaran", day: "Sun 26", meal: "Dinner", region: "짐바란(Jimbaran)", name: "짐바란 해산물(Jimbaran seafood)", note: "울루와뚜 후 선셋 해산물", map: "Jimbaran seafood Bali", routes: ["uluwatu"] },
+  { id: "boy-n-cow", day: "Sun 26", meal: "Dinner", region: "스미냑(Seminyak)", name: "Boy'N'Cow", note: "스미냑 복귀 후 스테이크하우스(steakhouse)", map: "Boy'N'Cow Seminyak Bali", routes: ["ubud", "tanah-lot"] },
+  { id: "warung-sika", day: "Sun 26", meal: "Dinner", region: "스미냑(Seminyak)", name: "Warung Sika", note: "복귀 후 캐주얼 현지식/와룽(warung)", map: "Warung Sika Seminyak Bali", routes: ["ubud", "tanah-lot"] },
+  { id: "revolver", day: "Mon 27", meal: "Breakfast", region: "스미냑(Seminyak)", name: "Revolver Espresso", note: "출국 전 커피(coffee)와 아침 식사", map: "Revolver Espresso Seminyak Bali" },
+  { id: "akasa", day: "Optional", meal: "Breakfast", region: "바투르산(Mount Batur)", name: "AKASA", note: "바투르산 선라이즈 투어를 넣을 때만", map: "AKASA Kintamani Bali" },
 ];
 
 const checklist = [
@@ -148,11 +148,19 @@ function googleMapUrl(query) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
+function sundayRouteMeals() {
+  return restaurants.filter((restaurant) => {
+    return restaurant.day === "Sun 26" && restaurant.routes?.includes(state.selectedRoute);
+  });
+}
+
 function renderRoutes() {
   const container = document.querySelector("#routeCards");
   const stops = document.querySelector("#routeStops");
+  const mealPlan = document.querySelector("#routeMealPlan");
   container.innerHTML = "";
   stops.innerHTML = "";
+  if (mealPlan) mealPlan.innerHTML = "";
 
   routes.forEach((route) => {
     const button = document.createElement("button");
@@ -167,6 +175,7 @@ function renderRoutes() {
     button.addEventListener("click", () => {
       state.selectedRoute = route.id;
       renderRoutes();
+      renderRestaurants();
     });
     container.append(button);
   });
@@ -177,19 +186,66 @@ function renderRoutes() {
     item.innerHTML = `<b>${index + 1}</b><span>${stop}</span>`;
     stops.append(item);
   });
+
+  if (mealPlan) {
+    const meals = sundayRouteMeals();
+    mealPlan.innerHTML = `
+      <div class="route-meal-note">
+        <strong>선택한 일요일 코스와 맞는 식사 후보</strong>
+        <span>${activeRoute.name} 기준으로 아래 식당표의 Sunday rows가 자동으로 바뀝니다.</span>
+      </div>
+      <div class="sheet-wrap compact-sheet">
+        <table class="sheet-table">
+          <thead>
+            <tr>
+              <th>식사(Meal)</th>
+              <th>지역(Region)</th>
+              <th>후보(Option)</th>
+              <th>지도(Map)</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${meals
+              .map(
+                (meal) => `
+                  <tr>
+                    <td data-label="식사(Meal)">${meal.meal}</td>
+                    <td data-label="지역(Region)">${meal.region}</td>
+                    <td data-label="후보(Option)"><strong>${meal.name}</strong><br /><span>${meal.note}</span></td>
+                    <td data-label="지도(Map)"><a class="map-link" href="${googleMapUrl(meal.map || meal.name)}" target="_blank" rel="noreferrer">Google Maps</a></td>
+                  </tr>
+                `
+              )
+              .join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
 }
 
 function renderRestaurants() {
   const container = document.querySelector("#restaurantGrid");
+  const selectedRoute = routes.find((route) => route.id === state.selectedRoute) || routes[0];
+  const visibleRestaurants = restaurants.filter((restaurant) => {
+    if (restaurant.day !== "Sun 26") return true;
+    return restaurant.routes?.includes(state.selectedRoute);
+  });
   container.innerHTML = `
+    <div class="table-caption">
+      <strong>현재 일요일 코스: ${selectedRoute.name}</strong>
+      <span>Sat/Mon은 고정 후보이고, Sun 후보는 위에서 고른 일요일 코스에 맞춰 바뀝니다.</span>
+    </div>
     <table class="sheet-table restaurant-sheet">
       <thead>
         <tr>
-          <th>지역(Area)</th>
+          <th>날짜(Date)</th>
+          <th>식사(Meal)</th>
+          <th>지역(Region)</th>
           <th>식당/음식(Restaurant)</th>
           <th>메모(Note)</th>
           <th>지도(Map)</th>
-          <th>투표(Vote)</th>
+          <th>투표/취소(Vote)</th>
           <th>현재 선택(Current votes)</th>
         </tr>
       </thead>
@@ -198,15 +254,23 @@ function renderRestaurants() {
   `;
 
   const body = container.querySelector("tbody");
-  restaurants.forEach(([id, name, area, mood, mapQuery]) => {
+  visibleRestaurants.forEach((restaurant) => {
+    const { id, day, meal, region, name, note, map, routes: routeMatches } = restaurant;
     const votes = state.votes[id] || [];
+    const currentName = state.name.trim();
+    const hasVoted = currentName && votes.includes(currentName);
     const row = document.createElement("tr");
+    if (routeMatches?.includes(state.selectedRoute)) {
+      row.classList.add("is-route-match");
+    }
     row.innerHTML = `
-      <td data-label="지역(Area)">${area}</td>
+      <td data-label="날짜(Date)">${day}${routeMatches?.includes(state.selectedRoute) ? '<span class="route-badge">Sunday course</span>' : ""}</td>
+      <td data-label="식사(Meal)">${meal}</td>
+      <td data-label="지역(Region)">${region}</td>
       <td data-label="식당/음식(Restaurant)"><strong>${name}</strong></td>
-      <td data-label="메모(Note)">${mood}</td>
-      <td data-label="지도(Map)"><a class="map-link" href="${googleMapUrl(mapQuery || name)}" target="_blank" rel="noreferrer">Google Maps</a></td>
-      <td data-label="투표(Vote)"><button type="button">투표(Vote)</button></td>
+      <td data-label="메모(Note)">${note}</td>
+      <td data-label="지도(Map)"><a class="map-link" href="${googleMapUrl(map || name)}" target="_blank" rel="noreferrer">Google Maps</a></td>
+      <td data-label="투표/취소(Vote)"><button type="button" class="${hasVoted ? "cancel-vote" : ""}">${hasVoted ? "취소(Cancel)" : "투표(Vote)"}</button></td>
       <td data-label="현재 선택(Current votes)"><output>${votes.length}표${votes.length ? `: ${votes.join(", ")}` : ""}</output></td>
     `;
     row.querySelector("button").addEventListener("click", () => {
@@ -215,7 +279,11 @@ function renderRestaurants() {
         alert("이름을 먼저 입력해주세요.");
         return;
       }
-      voteForRestaurant(id, nameValue);
+      if (hasVoted) {
+        cancelRestaurantVote(id, nameValue);
+      } else {
+        voteForRestaurant(id, nameValue);
+      }
     });
     body.append(row);
   });
@@ -327,6 +395,24 @@ async function voteForRestaurant(restaurantId, name) {
     await loadSharedData();
   } catch (error) {
     alert("투표를 저장하지 못했습니다. Supabase 설정을 확인해주세요.");
+    console.error(error);
+  }
+}
+
+async function cancelRestaurantVote(restaurantId, name) {
+  if (!hasSupabase) {
+    alert("Supabase 설정이 아직 없습니다.");
+    return;
+  }
+
+  try {
+    await supabaseFetch(
+      `restaurant_votes?restaurant_id=eq.${encodeURIComponent(restaurantId)}&name=eq.${encodeURIComponent(name)}`,
+      { method: "DELETE" }
+    );
+    await loadSharedData();
+  } catch (error) {
+    alert("투표 취소를 저장하지 못했습니다. Supabase 삭제 권한을 확인해주세요.");
     console.error(error);
   }
 }

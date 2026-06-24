@@ -380,6 +380,10 @@ h3 {
   color: #fff;
 }
 
+.sheet-table button.cancel-vote {
+  background: #7d2f20;
+}
+
 .map-link {
   background: #e5f3ef;
   border: 1px solid #b8dcd4;
@@ -390,6 +394,56 @@ h3 {
   color: var(--muted);
   display: block;
   min-width: 150px;
+}
+
+.route-meal-plan {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.route-meal-note,
+.table-caption {
+  background: #e5f3ef;
+  border: 1px solid #b8dcd4;
+  color: var(--teal-dark);
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+}
+
+.route-meal-note {
+  border-radius: 8px;
+}
+
+.table-caption {
+  border-width: 0 0 1px;
+}
+
+.route-meal-note span,
+.table-caption span {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.compact-sheet .sheet-table {
+  min-width: 720px;
+}
+
+.sheet-table tr.is-route-match td {
+  background: #f8fcfa;
+}
+
+.route-badge {
+  background: #f4d8c8;
+  border-radius: 999px;
+  color: #7d2f20;
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 900;
+  margin-left: 8px;
+  padding: 4px 7px;
+  white-space: nowrap;
 }
 
 .intro {
