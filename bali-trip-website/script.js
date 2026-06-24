@@ -46,24 +46,24 @@ const routes = [
 ];
 
 const restaurants = [
-  ["crumb-coaster", "Crumb & Coaster", "꾸따(Kuta)", "브런치(brunch), 도착 다음날 가볍게 시작"],
-  ["naughty-nuris", "Naughty Nuri's", "스미냑(Seminyak)", "폭립(pork ribs), 점심 후보"],
-  ["braud", "Braud", "스미냑(Seminyak)", "카페(cafe), Naughty Nuri's 근처"],
-  ["baked", "Baked", "스미냑/울루와뚜(Seminyak/Uluwatu)", "브런치와 커피, 여러 지점 활용 가능"],
-  ["la-brisa", "La Brisa", "짱구(Canggu)", "비치클럽(beach club), 선셋/선데이마켓"],
-  ["sensorium", "Sensorium", "짱구(Canggu)", "브런치 맛집, 카페 후보"],
-  ["warung-sika", "Warung Sika", "스미냑(Seminyak)", "현지식/와룽(warung), 캐주얼 식사"],
-  ["pennylane", "PennyLane", "짱구(Canggu)", "분위기 좋은 식사/카페"],
-  ["akasa", "AKASA", "바투르산(Mount Batur)", "바투르산 뷰 카페"],
-  ["pison-ubud", "Pison Ubud", "우붓(Ubud)", "우붓 카페/점심 후보"],
-  ["tukies", "Tukies Coconut Shop", "우붓(Ubud)", "코코넛 아이스크림"],
-  ["monsieur-spoon", "Monsieur Spoon", "우붓/스미냑(Ubud/Seminyak)", "베이커리(bakery), 가벼운 식사"],
-  ["sisterfields", "Sisterfields", "스미냑(Seminyak)", "브런치(brunch), 카페, 첫 만남에 편한 곳"],
-  ["motel-mexicola", "Motel Mexicola", "스미냑(Seminyak)", "활기 있는 단체 저녁(group dinner)"],
-  ["mades-warung", "Made's Warung", "스미냑(Seminyak)", "발리 음식(Balinese food), 무난한 선택"],
-  ["jimbaran", "짐바란 해산물(Jimbaran seafood)", "짐바란(Jimbaran)", "울루와뚜 후 선셋 해산물"],
-  ["revolver", "Revolver Espresso", "스미냑(Seminyak)", "커피(coffee)와 아침 식사"],
-  ["boy-n-cow", "Boy'N'Cow", "스미냑(Seminyak)", "스테이크하우스(steakhouse) 저녁"],
+  ["crumb-coaster", "Crumb & Coaster", "꾸따(Kuta)", "브런치(brunch), 도착 다음날 가볍게 시작", "Crumb & Coaster Kuta Bali"],
+  ["naughty-nuris", "Naughty Nuri's", "스미냑(Seminyak)", "폭립(pork ribs), 점심 후보", "Naughty Nuri's Seminyak Bali"],
+  ["braud", "Braud", "스미냑(Seminyak)", "카페(cafe), Naughty Nuri's 근처", "Braud Cafe Seminyak Bali"],
+  ["baked", "Baked", "스미냑/울루와뚜(Seminyak/Uluwatu)", "브런치와 커피, 여러 지점 활용 가능", "Baked Bali Uluwatu"],
+  ["la-brisa", "La Brisa", "짱구(Canggu)", "비치클럽(beach club), 선셋/선데이마켓", "La Brisa Bali"],
+  ["sensorium", "Sensorium", "짱구(Canggu)", "브런치 맛집, 카페 후보", "Sensorium Bali Canggu"],
+  ["warung-sika", "Warung Sika", "스미냑(Seminyak)", "현지식/와룽(warung), 캐주얼 식사", "Warung Sika Seminyak Bali"],
+  ["pennylane", "PennyLane", "짱구(Canggu)", "분위기 좋은 식사/카페", "PennyLane Canggu Bali"],
+  ["akasa", "AKASA", "바투르산(Mount Batur)", "바투르산 뷰 카페", "AKASA Kintamani Bali"],
+  ["pison-ubud", "Pison Ubud", "우붓(Ubud)", "우붓 카페/점심 후보", "Pison Ubud Bali"],
+  ["tukies", "Tukies Coconut Shop", "우붓(Ubud)", "코코넛 아이스크림", "Tukies Coconut Shop Ubud Bali"],
+  ["monsieur-spoon", "Monsieur Spoon", "우붓/스미냑(Ubud/Seminyak)", "베이커리(bakery), 가벼운 식사", "Monsieur Spoon Bali"],
+  ["sisterfields", "Sisterfields", "스미냑(Seminyak)", "브런치(brunch), 카페, 첫 만남에 편한 곳", "Sisterfields Seminyak Bali"],
+  ["motel-mexicola", "Motel Mexicola", "스미냑(Seminyak)", "활기 있는 단체 저녁(group dinner)", "Motel Mexicola Seminyak Bali"],
+  ["mades-warung", "Made's Warung", "스미냑(Seminyak)", "발리 음식(Balinese food), 무난한 선택", "Made's Warung Seminyak Bali"],
+  ["jimbaran", "짐바란 해산물(Jimbaran seafood)", "짐바란(Jimbaran)", "울루와뚜 후 선셋 해산물", "Jimbaran seafood Bali"],
+  ["revolver", "Revolver Espresso", "스미냑(Seminyak)", "커피(coffee)와 아침 식사", "Revolver Espresso Seminyak Bali"],
+  ["boy-n-cow", "Boy'N'Cow", "스미냑(Seminyak)", "스테이크하우스(steakhouse) 저녁", "Boy'N'Cow Seminyak Bali"],
 ];
 
 const checklist = [
@@ -144,6 +144,10 @@ function travellerName() {
   return document.querySelector("#travellerName").value.trim();
 }
 
+function googleMapUrl(query) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
 function renderRoutes() {
   const container = document.querySelector("#routeCards");
   const stops = document.querySelector("#routeStops");
@@ -177,22 +181,35 @@ function renderRoutes() {
 
 function renderRestaurants() {
   const container = document.querySelector("#restaurantGrid");
-  container.innerHTML = "";
+  container.innerHTML = `
+    <table class="sheet-table restaurant-sheet">
+      <thead>
+        <tr>
+          <th>지역(Area)</th>
+          <th>식당/음식(Restaurant)</th>
+          <th>메모(Note)</th>
+          <th>지도(Map)</th>
+          <th>투표(Vote)</th>
+          <th>현재 선택(Current votes)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  `;
 
-  restaurants.forEach(([id, name, area, mood]) => {
+  const body = container.querySelector("tbody");
+  restaurants.forEach(([id, name, area, mood, mapQuery]) => {
     const votes = state.votes[id] || [];
-    const card = document.createElement("article");
-    card.className = "restaurant-card";
-    card.innerHTML = `
-      <div>
-        <p>${area}</p>
-        <h3>${name}</h3>
-        <span>${mood}</span>
-      </div>
-      <button type="button">투표(Vote)</button>
-      <output>${votes.length}표${votes.length ? `: ${votes.join(", ")}` : ""}</output>
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td data-label="지역(Area)">${area}</td>
+      <td data-label="식당/음식(Restaurant)"><strong>${name}</strong></td>
+      <td data-label="메모(Note)">${mood}</td>
+      <td data-label="지도(Map)"><a class="map-link" href="${googleMapUrl(mapQuery || name)}" target="_blank" rel="noreferrer">Google Maps</a></td>
+      <td data-label="투표(Vote)"><button type="button">투표(Vote)</button></td>
+      <td data-label="현재 선택(Current votes)"><output>${votes.length}표${votes.length ? `: ${votes.join(", ")}` : ""}</output></td>
     `;
-    card.querySelector("button").addEventListener("click", () => {
+    row.querySelector("button").addEventListener("click", () => {
       const nameValue = travellerName();
       if (!nameValue) {
         alert("이름을 먼저 입력해주세요.");
@@ -200,7 +217,7 @@ function renderRestaurants() {
       }
       voteForRestaurant(id, nameValue);
     });
-    container.append(card);
+    body.append(row);
   });
 }
 

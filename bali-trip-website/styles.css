@@ -309,6 +309,89 @@ h3 {
   line-height: 1.45;
 }
 
+.sheet-wrap,
+.restaurant-grid {
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(62, 54, 43, 0.08);
+  display: block;
+  overflow-x: auto;
+}
+
+.sheet-table {
+  border-collapse: collapse;
+  min-width: 900px;
+  width: 100%;
+}
+
+.sheet-table th,
+.sheet-table td {
+  border-bottom: 1px solid var(--line);
+  line-height: 1.45;
+  padding: 13px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.sheet-table th {
+  background: #f5ead8;
+  color: var(--teal-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sheet-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.sheet-table strong {
+  color: var(--ink);
+}
+
+.sheet-table td {
+  color: var(--muted);
+}
+
+.sheet-table td:nth-child(2) {
+  color: var(--ink);
+  min-width: 190px;
+}
+
+.sheet-table button,
+.map-link {
+  align-items: center;
+  border-radius: 7px;
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 11px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sheet-table button {
+  background: var(--teal);
+  border: 0;
+  color: #fff;
+}
+
+.map-link {
+  background: #e5f3ef;
+  border: 1px solid #b8dcd4;
+  color: var(--teal-dark);
+}
+
+.restaurant-sheet output {
+  color: var(--muted);
+  display: block;
+  min-width: 150px;
+}
+
 .intro {
   align-items: end;
   display: grid;
@@ -387,7 +470,6 @@ textarea {
 }
 
 .route-cards,
-.restaurant-grid,
 .schedule-grid,
 .checklist-grid {
   display: grid;
@@ -486,10 +568,6 @@ textarea {
   color: var(--muted);
   line-height: 1.5;
   padding-left: 20px;
-}
-
-.restaurant-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .restaurant-card {
