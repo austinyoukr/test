@@ -91,6 +91,15 @@
         </div>
       </section>
 
+      <section class="section decision-section">
+        <div class="section-head">
+          <p class="label">Final decision board</p>
+          <h2>현재 결정해야 할 것들</h2>
+          <p>투표와 일요일 코스 선택을 보면서 최종 결정 후보를 한눈에 확인하는 영역입니다.</p>
+        </div>
+        <div class="decision-grid" id="decisionGrid"></div>
+      </section>
+
       <section class="intro section legacy-section" hidden>
         <div>
           <p class="label">그룹 플래너</p>
@@ -162,16 +171,19 @@
         <div class="section-head">
           <p class="label">추천 루트</p>
           <h2>일요일 메인 루트 하나를 골라주세요</h2>
+          <p>코스를 선택하면 일요일 식사 후보와 식당표의 Sunday rows가 같이 바뀝니다.</p>
         </div>
         <div class="route-cards" id="routeCards"></div>
+        <div class="sheet-wrap route-comparison" id="routeComparison"></div>
         <ol class="route-stops" id="routeStops"></ol>
         <div class="route-meal-plan" id="routeMealPlan"></div>
       </section>
 
       <section class="section spots-section">
         <div class="section-head">
-          <p class="label">Spot shortlist</p>
+          <p class="label">Ideas pool</p>
           <h2>가볼 만한 곳 후보</h2>
+          <p>아직 확정 일정이 아니라, 코스에 맞춰 골라볼 수 있는 아이디어 목록입니다.</p>
         </div>
         <div class="sheet-wrap">
           <table class="sheet-table">
@@ -331,8 +343,9 @@
 
       <section class="section" id="restaurants">
         <div class="section-head">
-          <p class="label">식당 의견</p>
+          <p class="label">Meal ideas pool</p>
           <h2>날짜·식사·지역별 식당 후보에 투표해주세요</h2>
+          <p>확정 일정이 아니라 후보 리스트입니다. 투표가 많은 곳을 최종 결정 후보로 올립니다.</p>
         </div>
         <div class="restaurant-grid" id="restaurantGrid"></div>
       </section>

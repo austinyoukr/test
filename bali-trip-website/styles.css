@@ -179,6 +179,56 @@ h3 {
   padding-top: 24px;
 }
 
+.decision-section {
+  padding-top: 24px;
+}
+
+.decision-section .section-head p:not(.label),
+.spots-section .section-head p:not(.label),
+#restaurants .section-head p:not(.label),
+#route .section-head p:not(.label) {
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.decision-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.decision-grid article {
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(62, 54, 43, 0.08);
+  min-height: 170px;
+  padding: 18px;
+}
+
+.decision-grid span {
+  color: var(--coral);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.decision-grid strong {
+  color: var(--ink);
+  display: block;
+  line-height: 1.25;
+}
+
+.decision-grid p {
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 10px 0 0;
+}
+
 .info-grid {
   display: grid;
   gap: 14px;
@@ -321,7 +371,7 @@ h3 {
 
 .sheet-table {
   border-collapse: collapse;
-  min-width: 900px;
+  min-width: 1120px;
   width: 100%;
 }
 
@@ -428,6 +478,14 @@ h3 {
 
 .compact-sheet .sheet-table {
   min-width: 720px;
+}
+
+.route-comparison {
+  margin-top: 18px;
+}
+
+.comparison-table {
+  min-width: 960px;
 }
 
 .sheet-table tr.is-route-match td {
@@ -745,6 +803,7 @@ textarea {
   .intro,
   .top-board,
   .info-grid,
+  .decision-grid,
   .hourly-grid,
   .spot-grid,
   .route-cards,
@@ -779,6 +838,7 @@ textarea {
   .intro,
   .top-board,
   .info-grid,
+  .decision-grid,
   .hourly-grid,
   .spot-grid,
   .route-cards,

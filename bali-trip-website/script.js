@@ -4,6 +4,11 @@ const routes = [
     name: "A안: 울루와뚜 절벽(Uluwatu cliffs)",
     fit: "짧은 여행에 가장 추천",
     time: "10:30-22:00",
+    travel: "Medium",
+    bestFor: "Sunset, cliffs, beach, strong Bali feeling",
+    risk: "Needs driver timing and can feel full-day",
+    sunset: "Uluwatu Temple / Jimbaran",
+    booking: "Driver + Kecak show recommended",
     notes:
       "해변, 절벽, 선셋, 저녁을 한 번에 즐길 수 있는 가장 균형 좋은 루트입니다.",
     stops: [
@@ -19,6 +24,11 @@ const routes = [
     name: "B안: 우붓 문화(Ubud culture)",
     fit: "사원, 시장, 자연을 원하면 추천",
     time: "08:30-20:30",
+    travel: "High",
+    bestFor: "Market, culture, jungle, slower photos",
+    risk: "Longest drive; keep stops limited",
+    sunset: "Dinner back in Seminyak",
+    booking: "Driver strongly recommended",
     notes:
       "예쁘지만 이동 시간이 깁니다. 일찍 출발하고 방문지는 너무 많이 넣지 않는 편이 좋습니다.",
     stops: [
@@ -34,6 +44,11 @@ const routes = [
     name: "C안: 짱구와 따나롯(Canggu & Tanah Lot)",
     fit: "여유로운 대안",
     time: "11:00-21:00",
+    travel: "Low-Medium",
+    bestFor: "Relaxed cafes, shopping, beach club",
+    risk: "Less dramatic than Uluwatu",
+    sunset: "Tanah Lot / Canggu beach",
+    booking: "Beach club booking optional",
     notes:
       "울루와뚜나 우붓보다 덜 빡빡해서 친구들과 느긋하게 움직이기 좋습니다.",
     stops: [
@@ -154,13 +169,90 @@ function sundayRouteMeals() {
   });
 }
 
+function restaurantPriority(restaurant) {
+  if (restaurant.day === "Sun 26" && restaurant.routes?.includes(state.selectedRoute)) return "High";
+  if (restaurant.day === "Sat 25" || restaurant.day === "Mon 27") return "Medium";
+  return "Idea";
+}
+
+function bookingNeed(restaurant) {
+  if (["motel-mexicola", "boy-n-cow", "jimbaran", "la-brisa"].includes(restaurant.id)) {
+    return "Booking recommended";
+  }
+  if (restaurant.meal === "Dinner") return "Check if busy";
+  return "Usually walk-in";
+}
+
+function distanceNote(restaurant) {
+  if (restaurant.region.includes("스미냑") || restaurant.region.includes("Seminyak")) return "Near accommodation";
+  if (restaurant.region.includes("꾸따") || restaurant.region.includes("Kuta")) return "Short ride";
+  if (restaurant.region.includes("짱구") || restaurant.region.includes("Canggu")) return "Medium ride";
+  if (restaurant.region.includes("울루와뚜") || restaurant.region.includes("Uluwatu")) return "Route-day ride";
+  if (restaurant.region.includes("우붓") || restaurant.region.includes("Ubud")) return "Long ride";
+  return "Depends on route";
+}
+
+function voteCount(restaurant) {
+  return (state.votes[restaurant.id] || []).length;
+}
+
+function topRestaurantFor(day, meal) {
+  const options = restaurants.filter((restaurant) => {
+    if (restaurant.day !== day || restaurant.meal !== meal) return false;
+    if (day === "Sun 26") return restaurant.routes?.includes(state.selectedRoute);
+    return true;
+  });
+  return options.sort((a, b) => voteCount(b) - voteCount(a))[0] || null;
+}
+
+function decisionText(restaurant) {
+  if (!restaurant) return "Not decided";
+  const count = voteCount(restaurant);
+  return `${restaurant.name}${count ? ` (${count} votes)` : " (no votes yet)"}`;
+}
+
+function renderDecisionDashboard() {
+  const container = document.querySelector("#decisionGrid");
+  if (!container) return;
+
+  const selectedRoute = routes.find((route) => route.id === state.selectedRoute) || routes[0];
+  const saturdayDinner = topRestaurantFor("Sat 25", "Dinner");
+  const sundayDinner = topRestaurantFor("Sun 26", "Dinner");
+  const mondayBreakfast = topRestaurantFor("Mon 27", "Breakfast");
+
+  container.innerHTML = `
+    <article>
+      <span>Sunday route</span>
+      <strong>${selectedRoute.name}</strong>
+      <p>${selectedRoute.bestFor}</p>
+    </article>
+    <article>
+      <span>Saturday dinner</span>
+      <strong>${decisionText(saturdayDinner)}</strong>
+      <p>Vote leader from fixed Saturday dinner ideas.</p>
+    </article>
+    <article>
+      <span>Sunday dinner</span>
+      <strong>${decisionText(sundayDinner)}</strong>
+      <p>Changes with selected Sunday route.</p>
+    </article>
+    <article>
+      <span>Departure morning</span>
+      <strong>${decisionText(mondayBreakfast)}</strong>
+      <p>Keep this close to Seminyak/Kuta because of the flight.</p>
+    </article>
+  `;
+}
+
 function renderRoutes() {
   const container = document.querySelector("#routeCards");
   const stops = document.querySelector("#routeStops");
   const mealPlan = document.querySelector("#routeMealPlan");
+  const comparison = document.querySelector("#routeComparison");
   container.innerHTML = "";
   stops.innerHTML = "";
   if (mealPlan) mealPlan.innerHTML = "";
+  if (comparison) comparison.innerHTML = "";
 
   routes.forEach((route) => {
     const button = document.createElement("button");
@@ -176,6 +268,7 @@ function renderRoutes() {
       state.selectedRoute = route.id;
       renderRoutes();
       renderRestaurants();
+      renderDecisionDashboard();
     });
     container.append(button);
   });
@@ -222,6 +315,39 @@ function renderRoutes() {
       </div>
     `;
   }
+
+  if (comparison) {
+    comparison.innerHTML = `
+      <table class="sheet-table comparison-table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Travel time</th>
+            <th>Best for</th>
+            <th>Risk</th>
+            <th>Sunset</th>
+            <th>Booking</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${routes
+            .map(
+              (route) => `
+                <tr class="${route.id === state.selectedRoute ? "is-route-match" : ""}">
+                  <td data-label="Course"><strong>${route.name}</strong></td>
+                  <td data-label="Travel time">${route.travel}</td>
+                  <td data-label="Best for">${route.bestFor}</td>
+                  <td data-label="Risk">${route.risk}</td>
+                  <td data-label="Sunset">${route.sunset}</td>
+                  <td data-label="Booking">${route.booking}</td>
+                </tr>
+              `
+            )
+            .join("")}
+        </tbody>
+      </table>
+    `;
+  }
 }
 
 function renderRestaurants() {
@@ -242,11 +368,14 @@ function renderRestaurants() {
           <th>날짜(Date)</th>
           <th>식사(Meal)</th>
           <th>지역(Region)</th>
+          <th>우선순위(Priority)</th>
+          <th>예약(Booking)</th>
+          <th>거리(Distance)</th>
           <th>식당/음식(Restaurant)</th>
           <th>메모(Note)</th>
           <th>지도(Map)</th>
           <th>투표/취소(Vote)</th>
-          <th>현재 선택(Current votes)</th>
+          <th>누가 원하는지(Who wants this)</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -267,11 +396,14 @@ function renderRestaurants() {
       <td data-label="날짜(Date)">${day}${routeMatches?.includes(state.selectedRoute) ? '<span class="route-badge">Sunday course</span>' : ""}</td>
       <td data-label="식사(Meal)">${meal}</td>
       <td data-label="지역(Region)">${region}</td>
+      <td data-label="우선순위(Priority)">${restaurantPriority(restaurant)}</td>
+      <td data-label="예약(Booking)">${bookingNeed(restaurant)}</td>
+      <td data-label="거리(Distance)">${distanceNote(restaurant)}</td>
       <td data-label="식당/음식(Restaurant)"><strong>${name}</strong></td>
       <td data-label="메모(Note)">${note}</td>
       <td data-label="지도(Map)"><a class="map-link" href="${googleMapUrl(map || name)}" target="_blank" rel="noreferrer">Google Maps</a></td>
       <td data-label="투표/취소(Vote)"><button type="button" class="${hasVoted ? "cancel-vote" : ""}">${hasVoted ? "취소(Cancel)" : "투표(Vote)"}</button></td>
-      <td data-label="현재 선택(Current votes)"><output>${votes.length}표${votes.length ? `: ${votes.join(", ")}` : ""}</output></td>
+      <td data-label="누가 원하는지(Who wants this)"><output>${votes.length}표${votes.length ? `: ${votes.join(", ")}` : ""}</output></td>
     `;
     row.querySelector("button").addEventListener("click", () => {
       const nameValue = travellerName();
@@ -373,6 +505,7 @@ async function loadSharedData() {
     renderRestaurants();
     renderChecklist();
     renderComments();
+    renderDecisionDashboard();
     showSyncStatus("공유 저장이 연결되었습니다. 댓글과 투표는 자동으로 갱신됩니다.", "ok");
   } catch (error) {
     showSyncStatus("Supabase 연결을 확인해주세요. config.js 또는 테이블 권한을 점검해야 합니다.", "warning");
@@ -483,6 +616,7 @@ document.querySelector("#commentForm").addEventListener("submit", (event) => {
 
 renderRoutes();
 renderRestaurants();
+renderDecisionDashboard();
 renderChecklist();
 renderComments();
 loadSharedData();
