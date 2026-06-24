@@ -46,6 +46,18 @@ const routes = [
 ];
 
 const restaurants = [
+  ["crumb-coaster", "Crumb & Coaster", "꾸따(Kuta)", "브런치(brunch), 도착 다음날 가볍게 시작"],
+  ["naughty-nuris", "Naughty Nuri's", "스미냑(Seminyak)", "폭립(pork ribs), 점심 후보"],
+  ["braud", "Braud", "스미냑(Seminyak)", "카페(cafe), Naughty Nuri's 근처"],
+  ["baked", "Baked", "스미냑/울루와뚜(Seminyak/Uluwatu)", "브런치와 커피, 여러 지점 활용 가능"],
+  ["la-brisa", "La Brisa", "짱구(Canggu)", "비치클럽(beach club), 선셋/선데이마켓"],
+  ["sensorium", "Sensorium", "짱구(Canggu)", "브런치 맛집, 카페 후보"],
+  ["warung-sika", "Warung Sika", "스미냑(Seminyak)", "현지식/와룽(warung), 캐주얼 식사"],
+  ["pennylane", "PennyLane", "짱구(Canggu)", "분위기 좋은 식사/카페"],
+  ["akasa", "AKASA", "바투르산(Mount Batur)", "바투르산 뷰 카페"],
+  ["pison-ubud", "Pison Ubud", "우붓(Ubud)", "우붓 카페/점심 후보"],
+  ["tukies", "Tukies Coconut Shop", "우붓(Ubud)", "코코넛 아이스크림"],
+  ["monsieur-spoon", "Monsieur Spoon", "우붓/스미냑(Ubud/Seminyak)", "베이커리(bakery), 가벼운 식사"],
   ["sisterfields", "Sisterfields", "스미냑(Seminyak)", "브런치(brunch), 카페, 첫 만남에 편한 곳"],
   ["motel-mexicola", "Motel Mexicola", "스미냑(Seminyak)", "활기 있는 단체 저녁(group dinner)"],
   ["mades-warung", "Made's Warung", "스미냑(Seminyak)", "발리 음식(Balinese food), 무난한 선택"],
@@ -63,9 +75,17 @@ const checklist = [
   ["항공권(Flights)", "perth-flight", "퍼스팀 항공권 예약/확인"],
   ["항공권(Flights)", "seoul-flight", "서울팀 항공편명과 도착 시간 공유"],
   ["교통(Transport)", "driver", "늦은 밤 공항 픽업 드라이버 예약"],
+  ["환전/결제(Money)", "travel-card", "트래블월렛/해외 결제 카드 준비"],
+  ["환전/결제(Money)", "rupiah-cash", "루피아 현금 소액 준비"],
   ["도착 후(On arrival)", "sim", "eSIM 또는 로밍 준비"],
-  ["도착 후(On arrival)", "cash", "첫날 밤 사용할 소액 현금"],
+  ["도착 후(On arrival)", "shower-filter", "샤워필터기와 리필 챙기기"],
+  ["건강(Health)", "medicine", "지사제, 감기약, 밴드, 모기기피제"],
+  ["건강(Health)", "probiotics", "프로바이오틱스/장 건강 준비"],
+  ["투어(Tour)", "neck-pillow", "장거리 차량 이동용 목베개"],
+  ["투어(Tour)", "light-jacket", "바투르산/우천 대비 얇은 겉옷"],
   ["짐(Packing)", "adapter", "전원 어댑터, 선크림, 수영복"],
+  ["짐(Packing)", "power-bank", "보조배터리, 충전기, 이어폰"],
+  ["짐(Packing)", "laundry-bag", "입은 옷 분리용 가방/비닐백"],
 ];
 
 const profileKey = "bali-trip-profile-v2";
