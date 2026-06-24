@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>발리 여행 플래너 | 7월 24-27일</title>
+    <meta
+      name="description"
+      content="퍼스-발리 여행 일정, 맛집 투표, 댓글, 준비 체크리스트."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img src="assets/bali-hero.png" alt="" />
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <p class="kicker">친구들과 퍼스에서 발리로</p>
+        <h1>7월 24-27일 발리 플래너</h1>
+        <p>
+          스미냑과 꾸따 근처 Jalan Raya Basangkasa No.27 숙소를 기준으로
+          짧고 편하게 움직이는 발리 여행 루트입니다.
+        </p>
+        <div class="quick-facts">
+          <span>7월 24일: 퍼스 20:00 - 발리 23:40</span>
+          <span>7월 27일: 발리 15:55 - 퍼스 19:40</span>
+          <span>한국에서 오는 친구들도 같은 기간 합류</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro section">
+        <div>
+          <p class="label">그룹 플래너</p>
+          <h2>이 페이지에서 같이 루트를 골라보세요</h2>
+          <p>
+            이름을 입력한 뒤 식당에 투표하고, 의견을 남기고, 준비 체크리스트를
+            체크할 수 있습니다. 현재 버전은 각자 브라우저에만 저장되며,
+            친구들과 실시간 동기화되지는 않습니다.
+          </p>
+        </div>
+        <label class="name-box">
+          <span>이름</span>
+          <input id="travellerName" type="text" placeholder="예: Jay" />
+        </label>
+      </section>
+
+      <section class="section" id="route">
+        <div class="section-head">
+          <p class="label">추천 루트</p>
+          <h2>일요일 메인 루트 하나를 골라주세요</h2>
+        </div>
+        <div class="route-cards" id="routeCards"></div>
+        <ol class="route-stops" id="routeStops"></ol>
+      </section>
+
+      <section class="schedule-band">
+        <div class="section">
+          <div class="section-head">
+            <p class="label">일정</p>
+            <h2>날짜별 여행 계획</h2>
+          </div>
+          <div class="schedule-grid">
+            <article>
+              <p>7월 24일 금요일</p>
+              <h3>도착하는 밤</h3>
+              <span>20:00-23:40 비행</span>
+              <ul>
+                <li>퍼스 공항에서 덴파사르 공항으로 이동.</li>
+                <li>늦은 밤 공항 픽업 차량을 미리 예약.</li>
+                <li>Jalan Raya Basangkasa No.27 숙소로 바로 이동.</li>
+                <li>한국에서 오는 친구들은 숙소나 다음날 아침에 만나기.</li>
+              </ul>
+            </article>
+            <article>
+              <p>7월 25일 토요일</p>
+              <h3>꾸따와 스미냑</h3>
+              <span>가볍게 적응하는 날</span>
+              <ul>
+                <li>스미냑에서 늦은 브런치.</li>
+                <li>더블식스 비치 산책.</li>
+                <li>마사지, 카페, 쇼핑 중 선택.</li>
+                <li>쁘띠탕겟 선셋 후 단체 저녁.</li>
+              </ul>
+            </article>
+            <article>
+              <p>7월 26일 일요일</p>
+              <h3>메인 데이투어</h3>
+              <span>루트 하나 선택</span>
+              <ul>
+                <li>가장 추천: 울루와뚜 절벽과 선셋.</li>
+                <li>대안: 우붓 문화/시장/논 풍경.</li>
+                <li>여유로운 선택: 짱구와 따나롯.</li>
+                <li>단체용 프라이빗 드라이버 1명 예약.</li>
+              </ul>
+            </article>
+            <article>
+              <p>7월 27일 월요일</p>
+              <h3>출국일</h3>
+              <span>15:55-19:40 비행</span>
+              <ul>
+                <li>꾸따나 스미냑 근처에서만 움직이기.</li>
+                <li>아침 식사와 마지막 쇼핑 정도만.</li>
+                <li>점심 전후로 짐 찾기.</li>
+                <li>13:30쯤 덴파사르 공항 도착 목표.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="restaurants">
+        <div class="section-head">
+          <p class="label">식당 의견</p>
+          <h2>가고 싶은 식당에 투표해주세요</h2>
+        </div>
+        <div class="restaurant-grid" id="restaurantGrid"></div>
+      </section>
+
+      <section class="prep-band">
+        <div class="section">
+          <div class="section-head">
+            <p class="label">준비물</p>
+            <h2>출발 전 체크리스트</h2>
+          </div>
+          <div class="official-links">
+            <a href="https://www.smartraveller.gov.au/destinations/asia/indonesia" target="_blank" rel="noreferrer">호주 Smartraveller 인도네시아 안내</a>
+            <a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noreferrer">인도네시아 e-Visa</a>
+            <a href="https://allindonesia.imigrasi.go.id/" target="_blank" rel="noreferrer">All Indonesia 입국 신고</a>
+            <a href="https://lovebali.baliprov.go.id/" target="_blank" rel="noreferrer">Love Bali 관광세</a>
+          </div>
+          <div class="checklist-grid" id="checklistGrid"></div>
+        </div>
+      </section>
+
+      <section class="section comments-layout">
+        <div class="section-head">
+          <p class="label">댓글</p>
+          <h2>각자 의견을 남겨주세요</h2>
+        </div>
+        <form class="comment-form" id="commentForm">
+          <select id="commentSection">
+            <option>루트</option>
+            <option>식당</option>
+            <option>체크리스트</option>
+            <option>자유 의견</option>
+          </select>
+          <textarea
+            id="commentBody"
+            placeholder="식당 추천, 시간 걱정, 꼭 가고 싶은 곳, 준비물 메모를 남겨주세요."
+          ></textarea>
+          <button type="submit">댓글 남기기</button>
+        </form>
+        <div class="comments-list" id="commentsList"></div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
