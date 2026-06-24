@@ -101,8 +101,9 @@ async function supabaseFetch(path, options = {}) {
     throw new Error(await response.text());
   }
 
-  if (response.status === 204) return null;
-  return response.json();
+  const text = await response.text();
+  if (!text) return null;
+  return JSON.parse(text);
 }
 
 function showSyncStatus(message, tone = "info") {
