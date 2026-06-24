@@ -1,73 +1,75 @@
 const routes = [
   {
     id: "uluwatu",
-    name: "Route A: Uluwatu cliffs",
-    fit: "Best overall for this short trip",
+    name: "A안: 울루와뚜 절벽(Uluwatu cliffs)",
+    fit: "짧은 여행에 가장 추천",
     time: "10:30-22:00",
     notes:
-      "Most scenic and social. It gives beaches, cliffs, sunset, and dinner without needing a very early start.",
+      "해변, 절벽, 선셋, 저녁을 한 번에 즐길 수 있는 가장 균형 좋은 루트입니다.",
     stops: [
-      "Seminyak brunch",
-      "Padang Padang or Melasti Beach",
-      "Uluwatu Temple",
-      "Kecak sunset show",
-      "Jimbaran seafood or Seminyak dinner",
+      "스미냑 브런치(Seminyak brunch)",
+      "빠당빠당 또는 멜라스티 비치(Padang Padang / Melasti Beach)",
+      "울루와뚜 사원(Uluwatu Temple)",
+      "케착 선셋 공연(Kecak sunset show)",
+      "짐바란 해산물 또는 스미냑 저녁(Jimbaran seafood / Seminyak dinner)",
     ],
   },
   {
     id: "ubud",
-    name: "Route B: Ubud culture",
-    fit: "Best for temples, markets, and greenery",
+    name: "B안: 우붓 문화(Ubud culture)",
+    fit: "사원, 시장, 자연을 원하면 추천",
     time: "08:30-20:30",
     notes:
-      "Beautiful, but traffic makes this the longest day. Start early and keep the stop list disciplined.",
+      "예쁘지만 이동 시간이 깁니다. 일찍 출발하고 방문지는 너무 많이 넣지 않는 편이 좋습니다.",
     stops: [
-      "Tegenungan waterfall",
-      "Ubud market",
-      "Monkey Forest or Campuhan ridge",
-      "Rice terrace cafe",
-      "Dinner back in Seminyak",
+      "뜨그눙안 폭포(Tegenungan Waterfall)",
+      "우붓 시장(Ubud Market)",
+      "몽키 포레스트 또는 짬뿌한 릿지(Monkey Forest / Campuhan Ridge)",
+      "라이스 테라스 카페(Rice terrace cafe)",
+      "스미냑 복귀 후 저녁(Dinner back in Seminyak)",
     ],
   },
   {
     id: "tanah-lot",
-    name: "Route C: Canggu and Tanah Lot",
-    fit: "Best relaxed alternative",
+    name: "C안: 짱구와 따나롯(Canggu & Tanah Lot)",
+    fit: "여유로운 대안",
     time: "11:00-21:00",
     notes:
-      "Less packed than Uluwatu or Ubud, good for a slower friend-group day and sunset photos.",
+      "울루와뚜나 우붓보다 덜 빡빡해서 친구들과 느긋하게 움직이기 좋습니다.",
     stops: [
-      "Canggu brunch",
-      "Boutiques or beach club",
-      "Tanah Lot sunset",
-      "Seminyak dinner",
+      "짱구 브런치(Canggu brunch)",
+      "숍 구경 또는 비치클럽(Boutiques / beach club)",
+      "따나롯 선셋(Tanah Lot sunset)",
+      "스미냑 저녁(Seminyak dinner)",
     ],
   },
 ];
 
 const restaurants = [
-  ["sisterfields", "Sisterfields", "Seminyak", "brunch, cafe, easy first meetup"],
-  ["motel-mexicola", "Motel Mexicola", "Seminyak", "lively group dinner"],
-  ["mades-warung", "Made's Warung", "Seminyak", "Balinese classics, simple and reliable"],
-  ["jimbaran", "Jimbaran seafood", "Jimbaran", "sunset seafood after Uluwatu"],
-  ["revolver", "Revolver Espresso", "Seminyak", "coffee and breakfast"],
-  ["boy-n-cow", "Boy'N'Cow", "Seminyak", "steakhouse dinner"],
+  ["sisterfields", "Sisterfields", "스미냑(Seminyak)", "브런치(brunch), 카페, 첫 만남에 편한 곳"],
+  ["motel-mexicola", "Motel Mexicola", "스미냑(Seminyak)", "활기 있는 단체 저녁(group dinner)"],
+  ["mades-warung", "Made's Warung", "스미냑(Seminyak)", "발리 음식(Balinese food), 무난한 선택"],
+  ["jimbaran", "짐바란 해산물(Jimbaran seafood)", "짐바란(Jimbaran)", "울루와뚜 후 선셋 해산물"],
+  ["revolver", "Revolver Espresso", "스미냑(Seminyak)", "커피(coffee)와 아침 식사"],
+  ["boy-n-cow", "Boy'N'Cow", "스미냑(Seminyak)", "스테이크하우스(steakhouse) 저녁"],
 ];
 
 const checklist = [
-  ["Documents", "passport", "Passport valid for 6+ months"],
-  ["Documents", "evisa", "Indonesia e-VOA or visa plan"],
-  ["Documents", "arrival", "All Indonesia arrival declaration within 72 hours"],
-  ["Documents", "levy", "Bali tourist levy payment"],
-  ["Documents", "insurance", "Travel insurance saved offline"],
-  ["Transport", "driver", "Late-night airport driver booked"],
-  ["Friends", "korea", "Korea friends' arrival times shared in chat"],
-  ["On arrival", "sim", "eSIM or roaming ready"],
-  ["On arrival", "cash", "Small cash for first night"],
-  ["Packing", "adapter", "Power adapter, sunscreen, swimwear"],
+  ["서류(Documents)", "passport", "여권 유효기간 6개월 이상 확인"],
+  ["서류(Documents)", "evisa", "인도네시아 e-VOA 또는 비자 준비"],
+  ["서류(Documents)", "arrival", "출발 72시간 이내 All Indonesia 입국 신고"],
+  ["서류(Documents)", "levy", "발리 관광세(Bali tourist levy) 결제"],
+  ["서류(Documents)", "insurance", "여행자 보험(Travel insurance) 저장"],
+  ["항공권(Flights)", "perth-flight", "퍼스팀 항공권 예약/확인"],
+  ["항공권(Flights)", "seoul-flight", "서울팀 항공편명과 도착 시간 공유"],
+  ["교통(Transport)", "driver", "늦은 밤 공항 픽업 드라이버 예약"],
+  ["도착 후(On arrival)", "sim", "eSIM 또는 로밍 준비"],
+  ["도착 후(On arrival)", "cash", "첫날 밤 사용할 소액 현금"],
+  ["짐(Packing)", "adapter", "전원 어댑터, 선크림, 수영복"],
 ];
 
 const profileKey = "bali-trip-profile-v2";
+const sharedChecklistName = "__group_checklist__";
 const supabaseConfig = window.BALI_SUPABASE || {};
 const hasSupabase = Boolean(supabaseConfig.url && supabaseConfig.anonKey);
 const state = {
@@ -112,7 +114,7 @@ function showSyncStatus(message, tone = "info") {
     node = document.createElement("p");
     node.id = "syncStatus";
     node.className = "sync-status";
-    document.querySelector(".intro div").append(node);
+    document.querySelector(".top-copy").append(node);
   }
   node.dataset.tone = tone;
   node.textContent = message;
@@ -167,13 +169,13 @@ function renderRestaurants() {
         <h3>${name}</h3>
         <span>${mood}</span>
       </div>
-      <button type="button">Vote</button>
-      <output>${votes.length} votes${votes.length ? ` from ${votes.join(", ")}` : ""}</output>
+      <button type="button">투표(Vote)</button>
+      <output>${votes.length}표${votes.length ? `: ${votes.join(", ")}` : ""}</output>
     `;
     card.querySelector("button").addEventListener("click", () => {
       const nameValue = travellerName();
       if (!nameValue) {
-        alert("Add your name first.");
+        alert("이름을 먼저 입력해주세요.");
         return;
       }
       voteForRestaurant(id, nameValue);
@@ -216,7 +218,7 @@ function renderComments() {
   container.innerHTML = "";
 
   if (!state.comments.length) {
-    container.innerHTML = `<p class="empty">No comments yet. Add the first idea.</p>`;
+    container.innerHTML = `<p class="empty">아직 댓글이 없습니다. 첫 의견을 남겨주세요.</p>`;
     return;
   }
 
@@ -237,7 +239,7 @@ function renderComments() {
 async function loadSharedData() {
   if (!hasSupabase) {
     showSyncStatus(
-      "Supabase config.js is not set yet. This page can open, but shared sync is off.",
+      "Supabase 설정이 아직 없습니다. 페이지는 열리지만 공유 저장은 꺼져 있습니다.",
       "warning"
     );
     return;
@@ -256,8 +258,8 @@ async function loadSharedData() {
       grouped[vote.restaurant_id].push(vote.name);
       return grouped;
     }, {});
-    state.checks = (checks || {})
-      .filter?.((item) => item.name.toLowerCase() === travellerName().toLowerCase())
+    state.checks = (checks || [])
+      .filter((item) => item.name === sharedChecklistName)
       .reduce((grouped, item) => {
         grouped[item.item_id] = item.done;
         return grouped;
@@ -266,16 +268,16 @@ async function loadSharedData() {
     renderRestaurants();
     renderChecklist();
     renderComments();
-    showSyncStatus("Supabase sync is connected. Updates refresh automatically.", "ok");
+    showSyncStatus("공유 저장이 연결되었습니다. 댓글과 투표는 자동으로 갱신됩니다.", "ok");
   } catch (error) {
-    showSyncStatus("Could not connect to Supabase. Check config.js and table policies.", "warning");
+    showSyncStatus("Supabase 연결을 확인해주세요. config.js 또는 테이블 권한을 점검해야 합니다.", "warning");
     console.error(error);
   }
 }
 
 async function voteForRestaurant(restaurantId, name) {
   if (!hasSupabase) {
-    alert("Supabase is not configured yet.");
+    alert("Supabase 설정이 아직 없습니다.");
     return;
   }
 
@@ -287,21 +289,14 @@ async function voteForRestaurant(restaurantId, name) {
     });
     await loadSharedData();
   } catch (error) {
-    alert("Vote could not be saved. Check Supabase setup.");
+    alert("투표를 저장하지 못했습니다. Supabase 설정을 확인해주세요.");
     console.error(error);
   }
 }
 
 async function saveChecklist(itemId, done) {
-  const name = travellerName();
-  if (!name) {
-    alert("Add your name first.");
-    renderChecklist();
-    return;
-  }
-
   if (!hasSupabase) {
-    alert("Supabase is not configured yet.");
+    alert("Supabase 설정이 아직 없습니다.");
     renderChecklist();
     return;
   }
@@ -312,14 +307,14 @@ async function saveChecklist(itemId, done) {
       headers: { Prefer: "resolution=merge-duplicates" },
       body: JSON.stringify({
         item_id: itemId,
-        name,
+        name: sharedChecklistName,
         done,
         updated_at: new Date().toISOString(),
       }),
     });
     await loadSharedData();
   } catch (error) {
-    alert("Checklist could not be saved. Check Supabase setup.");
+    alert("체크리스트를 저장하지 못했습니다. Supabase 설정을 확인해주세요.");
     console.error(error);
   }
 }
@@ -338,14 +333,14 @@ document.querySelector("#commentForm").addEventListener("submit", (event) => {
   const body = document.querySelector("#commentBody").value.trim();
 
   if (!name) {
-    alert("Add your name first.");
+    alert("이름을 먼저 입력해주세요.");
     return;
   }
 
   if (!body) return;
 
   if (!hasSupabase) {
-    alert("Supabase is not configured yet.");
+    alert("Supabase 설정이 아직 없습니다.");
     return;
   }
 
@@ -358,7 +353,7 @@ document.querySelector("#commentForm").addEventListener("submit", (event) => {
       return loadSharedData();
     })
     .catch((error) => {
-      alert("Comment could not be saved. Check Supabase setup.");
+      alert("댓글을 저장하지 못했습니다. Supabase 설정을 확인해주세요.");
       console.error(error);
     });
 });
